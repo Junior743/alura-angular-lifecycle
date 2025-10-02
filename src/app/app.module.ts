@@ -8,16 +8,9 @@ import { InputComponent } from './components/input/input.component';
 import { ItemComponent } from './components/item/item.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    InputComponent,
-    ItemComponent
-  ],
-  imports: [
-    BrowserModule,
-    FontAwesomeModule
-  ],
+  declarations: [AppComponent, InputComponent, ItemComponent],
+  imports: [BrowserModule, FontAwesomeModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
