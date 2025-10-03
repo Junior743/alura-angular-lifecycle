@@ -27,7 +27,8 @@ Siga as instruções abaixo para configurar e executar o projeto em seu ambiente
 
 ### Pré-requisitos
 
-- [Node.js](https://nodejs.org/) (versão 16.x ou superior)
+- [Node.js](https://nodejs.org/) (versão `=18.20.1`)
+- [npm](https://www.npmjs.com/) (versão `=10.5.1`)
 - [Angular CLI](https://angular.io/cli) instalado globalmente:
   ```bash
   npm install -g @angular/cli
