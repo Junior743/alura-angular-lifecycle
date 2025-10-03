@@ -5,29 +5,11 @@ import { Item } from './../interfaces/Item';
   providedIn: 'root',
 })
 export class ListaDeCompraService {
-  private listaDeCompra: Item[] = [
-    {
-      id: 1,
-      nome: 'Queijo prato',
-      data: 'Segunda-feira (31/10/2022) às 08:30',
-      comprado: false,
-    },
-    {
-      id: 2,
-      nome: 'Leite integral',
-      data: 'Segunda-feira (31/10/2022) às 08:30',
-      comprado: false,
-    },
-    {
-      id: 3,
-      nome: 'Mamão papaia',
-      data: 'Segunda-feira (31/10/2022) às 08:30',
-      comprado: true,
-    },
-  ];
+  private listaDeCompra: Item[];
 
   constructor() {
-    console.log('Instanciando dependências necessárias para o serviço.');
+    this.listaDeCompra =
+      JSON.parse(localStorage.getItem('listaDeCompra')!) || [];
   }
 
   getListaDeCompra() {
@@ -46,6 +28,8 @@ export class ListaDeCompraService {
   adicionarItemNaLista(nomeDoItem: string): void {
     const novoItem = this.criarItem(nomeDoItem);
     this.listaDeCompra.push(novoItem);
+
+    // this.atualizarLocalStorage(); // Atualiza o localStorage no DoCheck do AppComponent
   }
 
   editarItemNaLista(itemAntigo: Item, nomeEditadoDoItem: string): void {
@@ -54,5 +38,11 @@ export class ListaDeCompraService {
     );
 
     if (index !== -1) this.listaDeCompra[index].nome = nomeEditadoDoItem;
+
+    // this.atualizarLocalStorage(); // Atualiza o localStorage no DoCheck do AppComponent
+  }
+
+  atualizarLocalStorage() {
+    localStorage.setItem('listaDeCompra', JSON.stringify(this.listaDeCompra));
   }
 }

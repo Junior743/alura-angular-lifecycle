@@ -5,12 +5,19 @@
     <div class="lista">
       <h4 class="title-list">Lista de Compras</h4>
 
-      <div *ngFor="let item of listaCompras">
-        <app-item
-          [item]="item"
-          (emitindoItemParaEditar)="editarItem($event)"
-        ></app-item>
+      <div *ngIf="listaCompras.length; else listaVazia">
+        <div *ngFor="let item of listaCompras">
+          <app-item
+            [item]="item"
+            (emitindoItemParaEditar)="editarItem($event)"
+          ></app-item>
+        </div>
       </div>
+
+      <ng-template #listaVazia>
+        <br />
+        <p>Nenhum item na lista</p>
+      </ng-template>
     </div>
   </div>
 </section>
