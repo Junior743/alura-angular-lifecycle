@@ -28,4 +28,9 @@
   color: white;
   font-size: 0.7rem;
   padding: 0.4rem;
+  cursor: pointer;
+}
+.add-item button:disabled {
+  background: #8a8a8a;
+  cursor: auto;
 }
