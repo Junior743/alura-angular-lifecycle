@@ -42,6 +42,17 @@ export class ListaDeCompraService {
     // this.atualizarLocalStorage(); // Atualiza o localStorage no DoCheck do AppComponent
   }
 
+  deletarItemDaLista(itemId: number): void {
+    this.listaDeCompra = this.listaDeCompra.filter(
+      (item) => item.id !== itemId,
+    );
+  }
+
+  limparLista(): void {
+    this.listaDeCompra = [];
+    localStorage.removeItem('listaDeCompra');
+  }
+
   atualizarLocalStorage() {
     localStorage.setItem('listaDeCompra', JSON.stringify(this.listaDeCompra));
   }
