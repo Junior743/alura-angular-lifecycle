@@ -3,13 +3,20 @@
 
   <div class="container">
     <div class="lista">
-      <h4 class="title-list">Lista de Compras</h4>
+      <div class="header-lista">
+        <h4 class="title-list">Lista de Compras</h4>
+        <button class="btn-header" (click)="limparLista()">
+          <span>Limpar lista</span>
+          <fa-icon [icon]="faTrash"></fa-icon>
+        </button>
+      </div>
 
       <div *ngIf="listaCompras.length; else listaVazia">
         <div *ngFor="let item of listaCompras">
           <app-item
             [item]="item"
             (emitindoItemParaEditar)="editarItem($event)"
+            (emitindoItemParaDeletar)="deletarItem($event)"
           ></app-item>
         </div>
       </div>
