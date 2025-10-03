@@ -10,6 +10,10 @@
     "test": "ng test",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.html\" \"src/**/*.css\""
   },
+  "engines": {
+    "node": "=18.20.1",
+    "npm": "=10.5.1"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "^15.1.0",
