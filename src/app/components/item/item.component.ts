@@ -36,4 +36,8 @@ export class ItemComponent implements OnInit, OnChanges {
   editarItem() {
     this.emitindoItemParaEditar.emit(this.item);
   }
+
+  marcarComoComprado() {
+    this.item.comprado = !this.item.comprado;
+  }
 }

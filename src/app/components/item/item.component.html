@@ -4,8 +4,14 @@
   name="comprado"
   [id]="item.id"
   [checked]="item.comprado"
+  (change)="marcarComoComprado()"
 />
-<label [for]="item.id" class="description">{{ item.nome }}</label>
+<label
+  [for]="item.id"
+  class="description"
+  [class.line-through]="item.comprado"
+  >{{ item.nome }}</label
+>
 
 <div class="d-contents" *ngIf="!item.comprado">
   <fa-icon class="delete-icon" [icon]="faTrash"></fa-icon>
